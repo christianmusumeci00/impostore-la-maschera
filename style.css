@@ -35,3 +35,25 @@ details { border-top: 1px solid var(--border); padding: 12px 0; }
 details:first-of-type { border-top: none; }
 summary { cursor: pointer; font-weight: 800; color: var(--text); }
 footer { text-align: center; color: rgba(255, 255, 255, 0.55); font-size: 0.9rem; margin-top: 28px; }
+
+/* Lingua: si vede solo quella scelta (vedi lang.js). */
+html[data-lang-current="it"] [data-lang="en"],
+html[data-lang-current="en"] [data-lang="it"] { display: none !important; }
+
+/* Selettore Italiano / English */
+.lang-bar { display: flex; justify-content: flex-end; margin: -16px 0 12px; }
+.lang-switch {
+  display: none; /* senza JavaScript la pagina resta in italiano */
+  gap: 4px; padding: 4px; border-radius: 999px;
+  background: var(--card); border: 1px solid var(--border);
+}
+.js .lang-switch { display: inline-flex; }
+.lang-switch button {
+  appearance: none; -webkit-appearance: none; border: 0; cursor: pointer;
+  padding: 8px 14px; border-radius: 999px;
+  background: transparent; color: var(--muted);
+  font: inherit; font-size: 0.95rem; font-weight: 800; line-height: 1.2;
+}
+.lang-switch button:hover { color: var(--text); }
+.lang-switch button[aria-pressed="true"] { background: var(--gold); color: #3a1a00; }
+.lang-switch button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }

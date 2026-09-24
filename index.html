@@ -1,64 +1,131 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-lang-current="it"
+      data-title-it="Impostore: La Maschera – Supporto"
+      data-title-en="Impostore: La Maschera – Support">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Impostore: La Maschera – Supporto</title>
-  <meta name="description" content="Assistenza per Impostore: La Maschera, il party game del bugiardo.">
+  <script>
+    /* Lingua scelta prima di disegnare la pagina, senza sfarfallii (vedi lang.js). */
+    (function () {
+      var root = document.documentElement, lang = "";
+      try { lang = new URLSearchParams(window.location.search).get("lang") || localStorage.getItem("impostore-lang") || ""; } catch (e) {}
+      if (lang !== "it" && lang !== "en") {
+        var browser = (navigator.languages && navigator.languages[0]) || navigator.language || "it";
+        lang = browser.toLowerCase().indexOf("it") === 0 ? "it" : "en";
+      }
+      root.setAttribute("data-lang-current", lang);
+      root.lang = lang;
+      root.className += " js";
+      var title = root.getAttribute("data-title-" + lang);
+      if (title) document.title = title;
+    })();
+  </script>
+  <meta name="description" content="Assistenza per Impostore: La Maschera, il party game del bugiardo. Support for Impostore: La Maschera, the liar's party game.">
   <link rel="icon" href="icon.png">
   <link rel="stylesheet" href="style.css">
+  <script src="lang.js" defer></script>
 </head>
 <body>
 <main>
+  <div class="lang-bar">
+    <div class="lang-switch" role="group" aria-label="Lingua / Language">
+      <button type="button" data-set-lang="it" lang="it" aria-pressed="true">Italiano</button>
+      <button type="button" data-set-lang="en" lang="en" aria-pressed="false">English</button>
+    </div>
+  </div>
+
   <header>
     <img src="icon.png" alt="Icona di Impostore: La Maschera">
     <h1>Impostore: La Maschera</h1>
-    <p class="tagline">Il party game del bugiardo · 3–20 giocatori · un solo iPhone o iPad · anche offline</p>
+    <p class="tagline" data-lang="it">Il party game del bugiardo · 3–20 giocatori · un solo iPhone o iPad · anche offline</p>
+    <p class="tagline" data-lang="en">The liar's party game · 3–20 players · just one iPhone or iPad · works offline</p>
   </header>
 
-  <section>
-    <h2>Assistenza</h2>
-    <p>Domande, problemi o idee per nuove parole? Scrivici: ti risponderemo il prima possibile.</p>
-    <a class="button" href="mailto:impostore.supporto@gmail.com?subject=Impostore%3A%20La%20Maschera">impostore.supporto@gmail.com</a>
-  </section>
+  <!-- Italiano -->
+  <div data-lang="it" lang="it">
+    <section>
+      <h2>Assistenza</h2>
+      <p>Domande, problemi o idee per nuove parole? Scrivici: ti risponderemo il prima possibile.</p>
+      <a class="button" href="mailto:impostore.supporto@gmail.com?subject=Impostore%3A%20La%20Maschera">impostore.supporto@gmail.com</a>
+    </section>
 
-  <section>
-    <h2>Domande frequenti</h2>
-    <details>
-      <summary>Come si gioca?</summary>
-      <p>Passatevi il telefono (o l'iPad): ognuno scopre in segreto la propria carta. Tutti ricevono la stessa parola segreta, tranne l'impostore. A turno ognuno dice una parola collegata, poi votate chi secondo voi è l'impostore. Se lo scoprite, può ancora vincere indovinando la parola!</p>
-    </details>
-    <details>
-      <summary>Ho acquistato lo sblocco, ma le categorie sono bloccate</summary>
-      <p>Apri <strong>Info e privacy</strong> dalla schermata iniziale e tocca <strong>Ripristina acquisti</strong>, usando lo stesso Apple Account con cui hai acquistato.</p>
-    </details>
-    <details>
-      <summary>Serve una connessione a internet?</summary>
-      <p>No: il gioco funziona completamente offline. La connessione serve solo per acquistare o ripristinare lo sblocco.</p>
-    </details>
-    <details>
-      <summary>Come creo le mie categorie?</summary>
-      <p>Con lo sblocco completo: tocca <strong>Gioca</strong>, poi <strong>Crea e modifica le tue categorie</strong>. Scrivi almeno 5 parole, una per riga.</p>
-    </details>
-    <details>
-      <summary>Cos'è il Complice?</summary>
-      <p>Una modalità extra che attivi nelle opzioni (da 5 giocatori): un giocatore conosce la parola e sa chi è l'impostore, e vince insieme a lui se non viene scoperto.</p>
-    </details>
-    <details>
-      <summary>Come cancello i miei dati?</summary>
-      <p>Tutto resta solo sul tuo dispositivo: eliminando l'app si cancellano nomi, impostazioni, punteggi e categorie create. Non raccogliamo alcun dato.</p>
-    </details>
-  </section>
+    <section>
+      <h2>Domande frequenti</h2>
+      <details>
+        <summary>Come si gioca?</summary>
+        <p>Passatevi il telefono (o l'iPad): ognuno scopre in segreto la propria carta. Tutti ricevono la stessa parola segreta, tranne l'impostore. A turno ognuno dice una parola collegata, poi votate chi secondo voi è l'impostore. Se lo scoprite, può ancora vincere indovinando la parola!</p>
+      </details>
+      <details>
+        <summary>Ho acquistato lo sblocco, ma le categorie sono bloccate</summary>
+        <p>Apri <strong>Info e privacy</strong> dalla schermata iniziale e tocca <strong>Ripristina acquisti</strong>, usando lo stesso Apple Account con cui hai acquistato.</p>
+      </details>
+      <details>
+        <summary>Serve una connessione a internet?</summary>
+        <p>No: il gioco funziona completamente offline. La connessione serve solo per acquistare o ripristinare lo sblocco.</p>
+      </details>
+      <details>
+        <summary>Come creo le mie categorie?</summary>
+        <p>Con lo sblocco completo: tocca <strong>Gioca</strong>, poi <strong>Crea e modifica le tue categorie</strong>. Scrivi almeno 5 parole, una per riga.</p>
+      </details>
+      <details>
+        <summary>Cos'è il Complice?</summary>
+        <p>Una modalità extra che attivi nelle opzioni (da 5 giocatori): un giocatore conosce la parola e sa chi è l'impostore, e vince insieme a lui se non viene scoperto.</p>
+      </details>
+      <details>
+        <summary>Come cancello i miei dati?</summary>
+        <p>Tutto resta solo sul tuo dispositivo: eliminando l'app si cancellano nomi, impostazioni, punteggi e categorie create. Non raccogliamo alcun dato.</p>
+      </details>
+    </section>
 
-  <section>
-    <h2>Privacy</h2>
-    <p>Non raccogliamo nessun dato personale. Leggi l'<a href="privacy.html">informativa sulla privacy</a>.</p>
-  </section>
+    <section>
+      <h2>Privacy</h2>
+      <p>Non raccogliamo nessun dato personale. Leggi l'<a href="privacy.html">informativa sulla privacy</a>.</p>
+    </section>
+  </div>
 
-  <section>
-    <h2>English</h2>
-    <p>Impostore: La Maschera is an Italian party game. For support, write to <a href="mailto:impostore.supporto@gmail.com">impostore.supporto@gmail.com</a>. We don't collect any personal data: see our <a href="privacy.html">privacy policy</a>.</p>
-  </section>
+  <!-- English -->
+  <div data-lang="en" lang="en">
+    <section>
+      <h2>Support</h2>
+      <p>Questions, problems or ideas for new words? Write to us and we'll get back to you as soon as possible. Please note that the game itself is in Italian.</p>
+      <a class="button" href="mailto:impostore.supporto@gmail.com?subject=Impostore%3A%20La%20Maschera">impostore.supporto@gmail.com</a>
+    </section>
+
+    <section>
+      <h2>Frequently asked questions</h2>
+      <details>
+        <summary>How do you play?</summary>
+        <p>Pass the phone (or the iPad) around: everyone secretly looks at their own card. Everybody gets the same secret word, except the impostor. Taking turns, each player says one related word, then you all vote on who you think the impostor is. If you catch them, they can still win by guessing the word!</p>
+      </details>
+      <details>
+        <summary>I bought the unlock, but the categories are still locked</summary>
+        <p>Open <strong>Info e privacy</strong> from the home screen and tap <strong>Ripristina acquisti</strong> (Restore Purchases), using the same Apple Account you made the purchase with.</p>
+      </details>
+      <details>
+        <summary>Do I need an internet connection?</summary>
+        <p>No: the game works completely offline. You only need a connection to buy or restore the unlock.</p>
+      </details>
+      <details>
+        <summary>How do I create my own categories?</summary>
+        <p>With the full unlock: tap <strong>Gioca</strong> (Play), then <strong>Crea e modifica le tue categorie</strong> (Create and edit your categories). Write at least 5 words, one per line.</p>
+      </details>
+      <details>
+        <summary>What is the Accomplice?</summary>
+        <p>An extra mode you can turn on in the options (from 5 players): one player knows the word and who the impostor is, and wins together with them if they aren't caught.</p>
+      </details>
+      <details>
+        <summary>How do I delete my data?</summary>
+        <p>Everything stays on your device only: deleting the app removes names, settings, scores and the categories you created. We don't collect any data.</p>
+      </details>
+    </section>
+
+    <section>
+      <h2>Privacy</h2>
+      <p>We don't collect any personal data. Read our <a href="privacy.html">privacy policy</a>.</p>
+    </section>
+  </div>
 
   <footer>© 2026 Impostore: La Maschera</footer>
 </main>
